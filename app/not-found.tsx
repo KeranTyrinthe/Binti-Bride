@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from 'next'
-import Link from 'next/link'
+import { PageLink } from '@/components/page-link'
 import { SiteFooter, SiteHeader } from '@/components/site-chrome'
 import { PageIntro } from '@/components/site-pages'
 
@@ -10,7 +10,7 @@ export default function NotFound() {
     <SiteHeader />
     <main className="inner-page">
       <PageIntro eyebrow="BINTI Bride" title={<>PAGE<br />INTROUVABLE</>} />
-      <div className="story-back"><Link href="/" className="text-link">← Retour à l’accueil</Link></div>
+      <div className="story-back"><PageLink href="/" className="text-link">← Retour à l’accueil</PageLink></div>
     </main>
     <SiteFooter />
   </>

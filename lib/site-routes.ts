@@ -27,7 +27,7 @@ const sections = {
     image: media.hero,
   },
   [paths.about]: {
-    title: 'À propos de BINTI Bride',
+    title: 'Notre projet nuptial à Lubumbashi',
     description: 'Découvrez le projet BINTI Bride à Lubumbashi et sa vision de la location de robes de mariée, entre élégance, écoute et respect du budget.',
     image: media.portrait,
   },

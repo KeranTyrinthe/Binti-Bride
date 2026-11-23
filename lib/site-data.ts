@@ -240,11 +240,11 @@ export const articles = [
 ]
 
 export const galleryImages = [
-  { src: bridalPhoto('portrait-voile'), title: 'Portrait de mariée', detail: 'Voile et lumière' },
-  { src: bridalPhoto('robe-miroir'), title: 'Une robe au miroir', detail: 'Détail de dentelle' },
-  { src: bridalPhoto('portrait-sourire'), title: 'Un sourire sous le voile', detail: 'Portrait en studio' },
-  { src: bridalPhoto('robe-detail'), title: 'Les matières', detail: 'Dentelle et transparence' },
-  { src: bridalPhoto('robe-fluide'), title: 'Une ligne fluide', detail: 'Portrait en noir et blanc' },
-  ...caseStudies.map(({ image, title, detail }) => ({ src: image, title, detail })),
-  { src: bridalPhoto('robe-fenetre'), title: 'Une robe à la lumière du jour', detail: 'Dentelle lumineuse' },
+  { src: bridalPhoto('portrait-voile'), height: 1563, title: 'Portrait de mariée', detail: 'Voile et lumière' },
+  { src: bridalPhoto('robe-miroir'), height: 833, title: 'Une robe au miroir', detail: 'Détail de dentelle' },
+  { src: bridalPhoto('portrait-sourire'), height: 1873, title: 'Un sourire sous le voile', detail: 'Portrait en studio' },
+  { src: bridalPhoto('robe-detail'), height: 833, title: 'Les matières', detail: 'Dentelle et transparence' },
+  { src: bridalPhoto('robe-fluide'), height: 1875, title: 'Une ligne fluide', detail: 'Portrait en noir et blanc' },
+  ...caseStudies.map(({ slug, image, title, detail }) => ({ src: image, height: slug === 'allure-sophistiquee' ? 1563 : 1875, title, detail })),
+  { src: bridalPhoto('robe-fenetre'), height: 1875, title: 'Une robe à la lumière du jour', detail: 'Dentelle lumineuse' },
 ]

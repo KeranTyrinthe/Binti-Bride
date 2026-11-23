@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from 'next'
-import Link from 'next/link'
+import { PageLink } from '@/components/page-link'
 import { notFound, permanentRedirect } from 'next/navigation'
 import { PageStructuredData } from '@/components/page-structured-data'
 import { PageIntro, SitePage } from '@/components/site-pages'
@@ -34,11 +34,12 @@ export default async function InteriorRoute({ params }: RouteProps) {
   const target = getRedirect(path)
 
   if (target) {
-    if (process.env.BINTI_STATIC_EXPORT !== '1') permanentRedirect(publicPath(target))
+    const destination = publicPath(`${target}/`)
+    if (process.env.BINTI_STATIC_EXPORT !== '1') permanentRedirect(destination)
     return <main className="inner-page">
-      <meta httpEquiv="refresh" content={`0; url=${publicPath(target)}/`} />
+      <meta httpEquiv="refresh" content={`0; url=${destination}`} />
       <PageIntro eyebrow="BINTI Bride" title="PAGE DÉPLACÉE" />
-      <div className="story-back"><Link href={target} className="text-link">Accéder à la page ↗</Link></div>
+      <div className="story-back"><PageLink href={target} className="text-link">Accéder à la page ↗</PageLink></div>
     </main>
   }
 

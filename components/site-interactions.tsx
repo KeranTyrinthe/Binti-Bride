@@ -93,7 +93,7 @@ export function WeddingFilm({ poster, src }: { poster: string; src: string }) {
 
   return <>
     <button className="film-preview" type="button" onClick={() => setOpen(true)} aria-label="Lire la vidéo de couture nuptiale">
-      <img src={poster} alt="Détail de couture sur une robe de mariée" /><span className="film-play" aria-hidden="true">▶</span><span className="film-label">Lire la vidéo</span>
+      <img loading="lazy" decoding="async" src={poster} alt="Détail de couture sur une robe de mariée" /><span className="film-play" aria-hidden="true">▶</span><span className="film-label">Lire la vidéo</span>
     </button>
     {open && <div className="film-modal" role="dialog" aria-modal="true" aria-label="Vidéo de couture nuptiale" onClick={() => setOpen(false)}><button className="film-close" type="button" aria-label="Fermer la vidéo" onClick={() => setOpen(false)}>×</button><video controls autoPlay playsInline src={src} onClick={event => event.stopPropagation()} /></div>}
   </>
